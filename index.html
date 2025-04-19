@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>婉拒信</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Inter', sans-serif;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-xl font-bold mb-4">请输入密码</h2>
+            <input type="password" id="passwordInput" class="border border-gray-300 p-2 w-full mb-4" placeholder="输入密码">
+            <button id="submitPassword" class="bg-blue-500 text-white p-2 w-full rounded hover:bg-blue-600">提交</button>
+        </div>
+    </div>
+    <div id="letterContent" style="display: none;" class="max-w-3xl mx-auto p-8 bg-white shadow-md rounded-md mt-8">
+        <h1 class="text-3xl font-bold mb-4">婉拒信</h1>
+        <p class="text-gray-700 leading-relaxed">尊敬的[对方称呼]：</p>
+        <p class="text-gray-700 leading-relaxed">您好！</p>
+        <p class="text-gray-700 leading-relaxed">我怀着十分遗憾的心情给您写这封信，不得不婉拒您[具体事情]的邀请/请求。</p>
+        <p class="text-gray-700 leading-relaxed">[说明婉拒原因，可适当详细一些，如工作安排冲突、个人时间不允许等]。</p>
+        <p class="text-gray-700 leading-relaxed">我深知这次的婉拒可能会给您带来不便，对此我深感歉意。我非常感谢您对我的信任和认可，也十分珍惜我们之间的情谊/合作机会。</p>
+        <p class="text-gray-700 leading-relaxed">希望未来还有机会能够与您合作/相聚，祝您一切顺利，生活愉快！</p>
+        <p class="text-gray-700 leading-relaxed">此致</p>
+        <p class="text-gray-700 leading-relaxed">敬礼！</p>
+        <p class="text-gray-700 leading-relaxed mt-4">[你的名字]</p>
+        <p class="text-gray-700 leading-relaxed">[具体日期]</p>
+    </div>
+    <script>
+        const modal = document.getElementById('myModal');
+        const letterContent = document.getElementById('letterContent');
+        const passwordInput = document.getElementById('passwordInput');
+        const submitPassword = document.getElementById('submitPassword');
+
+        modal.style.display = 'block';
+
+        submitPassword.addEventListener('click', function() {
+            if (passwordInput.value === '1221') {
+                modal.style.display = 'none';
+                letterContent.style.display = 'block';
+            } else {
+                alert('密码错误，请重新输入。');
+            }
+        });
+    </script>
+</body>
+</html>
+    
